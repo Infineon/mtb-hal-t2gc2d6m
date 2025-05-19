@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['implementation_20specific_0',['Implementation Specific',['../group__group__hal__impl.html',1,'']]],
-  ['is_5ferase_5frequired_1',['is_erase_required',['../group__group__hal__nvm.html#a866a445ac14ab6df5961785a417bb9eb',1,'mtb_hal_nvm_region_info_t']]]
+  ['hal_20driver_20availability_0',['HAL Driver Availability',['../group__group__hal__availability.html',1,'']]],
+  ['hal_20drivers_1',['HAL Drivers',['../group__group__hal.html',1,'']]],
+  ['hal_20general_20types_2fmacros_2',['HAL General Types/Macros',['../group__group__hal__types.html',1,'']]],
+  ['hardware_20abstraction_20layer_3',['Hardware Abstraction Layer',['../index.html',1,'']]]
 ];

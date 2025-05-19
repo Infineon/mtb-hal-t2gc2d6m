@@ -123,7 +123,8 @@
 #include <stdbool.h>
 #include "cy_result.h"
 #include "mtb_hal_hw_types.h"
-#include "mtb_hal_pdl_map.h"
+
+#if defined(MTB_HAL_DRIVER_AVAILABLE_UART)
 
 #if defined(__cplusplus)
 extern "C" {
@@ -147,6 +148,9 @@ extern "C" {
 /** The actual clock tolerance is greater than the maximum allowed tolerance */
 #define MTB_HAL_UART_RSLT_ERR_CLOCK_FREQ_TOLERANCE             \
     (CY_RSLT_CREATE_EX(CY_RSLT_TYPE_ERROR, CY_RSLT_MODULE_ABSTRACTION_HAL, MTB_HAL_RSLT_MODULE_UART, 2))
+/** Other operation in progress */
+#define MTB_HAL_UART_RSLT_ERR_BUSY                         \
+    (CY_RSLT_CREATE_EX(CY_RSLT_TYPE_ERROR, CY_RSLT_MODULE_ABSTRACTION_HAL, MTB_HAL_RSLT_MODULE_UART, 3))
 /**
  * \}
  */
@@ -290,6 +294,15 @@ cy_rslt_t mtb_hal_uart_read(mtb_hal_uart_t* obj, void* rx, size_t* rx_length);
  */
 bool mtb_hal_uart_is_tx_active(mtb_hal_uart_t* obj);
 
+/** Determines if the UART peripheral is currently in use for RX
+ *
+ * This checks if all the data in the UART RX FIFO is received
+ *
+ * @param[in]  obj              The UART object
+ * @return RX channel active status (active=true)
+ */
+bool mtb_hal_uart_is_rx_active(mtb_hal_uart_t* obj);
+
 /** Register a uart callback handler
  *
  * This function will be called when one of the events enabled by \ref mtb_hal_uart_enable_event
@@ -361,6 +374,10 @@ cy_rslt_t mtb_hal_uart_config_async_dma(mtb_hal_uart_t* obj, mtb_hal_dma_t* dma_
  * \ref mtb_hal_uart_register_callback. RX callback events can be enabled using \ref
  * mtb_hal_uart_enable_event with the appropriate events.
  *
+ * \note This function modifies the RX FIFO level internally depending on the number of bytes
+ * to receive. User is expected to set it back to the desired RX FIFO level after the read
+ * is complete, if required.
+ *
  * @param[in]  obj              The UART object
  * @param[out] rx               The user specified receive buffer
  * @param[in]  length           The number of bytes to receive
@@ -376,6 +393,9 @@ cy_rslt_t mtb_hal_uart_read_async(mtb_hal_uart_t* obj, void* rx, size_t length);
  * be raised. The transmit buffer is a user defined buffer that will be sent on the UART. The user
  * must register a callback with \ref mtb_hal_uart_register_callback. If desired, TX callback
  * events can be enabled using \ref mtb_hal_uart_enable_event with the appropriate events.
+ *
+ * \note This function modifies the TX FIFO level internally. User is expected to set it back to
+ * the desired TX FIFO level after the write is complete, if required.
  *
  * @param[in] obj               The UART object
  * @param[in] tx                The transmit buffer
@@ -439,5 +459,7 @@ cy_rslt_t mtb_hal_uart_process_interrupt(mtb_hal_uart_t* obj);
 #ifdef MTB_HAL_UART_IMPL_HEADER
 #include MTB_HAL_UART_IMPL_HEADER
 #endif /* MTB_HAL_UART_IMPL_HEADER */
+
+#endif // defined(MTB_HAL_DRIVER_AVAILABLE_UART)
 
 /** \} group_hal_uart */

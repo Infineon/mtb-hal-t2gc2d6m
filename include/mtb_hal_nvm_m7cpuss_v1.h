@@ -116,13 +116,27 @@ __STATIC_INLINE bool _mtb_hal_nvm_is_operation_complete(void)
 __STATIC_INLINE cy_rslt_t _mtb_hal_nvm_read_helper_flash(uint32_t address, uint8_t* data,
                                                          size_t size)
 {
-    /* If CBUS with icache, we always use CBUS to read flash memory in order to take advantage of
-       icache property. */
-    #if defined(CY_FLASH_CBUS_BASE) && defined(CY_IP_M33SYSCPUSS)
-    memcpy((void*)data, (void*)(address & ~SBUS_ALIAS_OFFSET), size);
-    #else
-    memcpy((void*)data, (void*)address, size);
-    #endif
+    cy_stc_flash_blankcheck_config_t blankcheck_config;
+    blankcheck_config.addrToBeChecked       = (uint32_t*)address;
+    blankcheck_config.numOfWordsToBeChecked = size / 4;
+    cy_en_flashdrv_status_t blank_check_status = Cy_Flash_BlankCheck(&blankcheck_config,
+                                                                     CY_FLASH_DRIVER_BLOCKING);
+    /* eCT flash does not have a deterministic erase value, If user read erased region, return all 0
+       instead of garbage. */
+    if (blank_check_status == CY_FLASH_DRV_SUCCESS)
+    {
+        memset((void*)data, 0, size);
+    }
+    else
+    {
+        /* If CBUS with icache, we always use CBUS to read flash memory in order to take advantage
+           of icache property. */
+        #if defined(CY_FLASH_CBUS_BASE) && defined(CY_IP_M33SYSCPUSS)
+        memcpy((void*)data, (void*)(address & ~SBUS_ALIAS_OFFSET), size);
+        #else
+        memcpy((void*)data, (void*)address, size);
+        #endif
+    }
     return CY_RSLT_SUCCESS;
 }
 

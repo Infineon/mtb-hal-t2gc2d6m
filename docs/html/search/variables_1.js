@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['callback_5fdata_0',['callback_data',['../group__group__hal__impl__hw__types.html#a11d9a4433ea330791e36284a5bde644f',1,'mtb_hal_gpio_t']]],
-  ['callback_5fevent_1',['callback_event',['../group__group__hal__impl__hw__types.html#a532f89aec75bda6967c57857a0d7e737',1,'mtb_hal_timer_t']]],
-  ['channel_5fnum_2',['channel_num',['../group__group__hal__impl__hw__types.html#a5ca95db2fbee17c07bf2f1b7bdc95632',1,'mtb_hal_resource_inst_t']]],
-  ['clock_3',['clock',['../group__group__hal__impl__hw__types.html#a1480ba41b4c529d29d981ce0e539afc8',1,'mtb_hal_tcpwm_t::clock()'],['../group__group__hal__impl__hw__types.html#a437260d69578aa6d45aa6b76d951f1d2',1,'mtb_hal_pwm_configurator_t::clock()']]],
-  ['clock_5fhz_4',['clock_hz',['../group__group__hal__impl__hw__types.html#aff1dbcb3fed22dbc477c9826048cfd39',1,'mtb_hal_tcpwm_t']]],
-  ['cntnum_5',['cntnum',['../group__group__hal__impl__hw__types.html#af1c4972159c37b545151377af8adbe1f',1,'mtb_hal_tcpwm_t::cntnum()'],['../group__group__hal__impl__hw__types.html#a9707b05c17bcda4a96c2d95aea7d2e44',1,'mtb_hal_pwm_configurator_t::cntnum()']]]
+  ['base_0',['base',['../group__group__hal__availability.html#a9dbf8d8427bb13e44d4b760b4af97945',1,'mtb_hal_memoryspi_t::base()'],['../structmtb__hal__memoryspi__configurator__t.html#a00ae48461afbef08f83aaba7cd84bbec',1,'mtb_hal_memoryspi_configurator_t::base()'],['../structmtb__hal__spi__t.html#a8a3880c73ae2ee28830f9baa8b5f9d64',1,'mtb_hal_spi_t::base()'],['../structmtb__hal__spi__configurator__t.html#accfd9fe6f5f2eb7b43b368151555204d',1,'mtb_hal_spi_configurator_t::base()'],['../structmtb__hal__uart__t.html#a894a064d2fe11b234bf7811f8238c60c',1,'mtb_hal_uart_t::base()'],['../structmtb__hal__uart__configurator__t.html#a774938e844557ce8c0a0597defc31091',1,'mtb_hal_uart_configurator_t::base()']]],
+  ['block_5fsize_1',['block_size',['../group__group__hal__nvm.html#a8e2cdda5dd52a7ca948f0201b015ace7',1,'mtb_hal_nvm_region_info_t']]]
 ];

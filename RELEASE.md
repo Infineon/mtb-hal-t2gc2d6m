@@ -5,18 +5,30 @@ On devices which contain multiple cores, this library is supported on all cores.
 
 ### What's Included?
 This release of the HAL includes support for the following drivers:
+* Clock
+* GPIO
+* LPTimer
+* MemorySPI
 * NVM
+* SPI
+* SysPm
+* System
+* UART
 
 ### What Changed?
+#### v1.1.0
+* Add SPI, LPTimer, SysPm, MemorySPI driver
+
 #### v1.0.0
 * Initial release for T2GC2D6M support.
+
 
 ### Supported Software and Tools
 This version of the Hardware Abstraction Layer was validated for compatibility with the following Software and Tools:
 
 | Software and Tools                        | Version |
 | :---                                      | :----:  |
-| ModusToolbox™ Software Environment        | 3.4.0   |
+| ModusToolbox™ Software Environment        | 3.3.0   |
 | GCC Compiler                              | 11.3.1  |
 | IAR Compiler                              | 9.50.2  |
 | ARM Compiler                              | 6.22    |
@@ -31,4 +43,4 @@ Use the following links for more information, as needed:
 * [ModusToolbox™](https://www.cypress.com/products/modustoolbox-software-environment)
 
 ---
-© Cypress Semiconductor Corporation (an Infineon company) or an affiliate of Cypress Semiconductor Corporation, 2024.
+© Cypress Semiconductor Corporation (an Infineon company) or an affiliate of Cypress Semiconductor Corporation, 2019-2024.
