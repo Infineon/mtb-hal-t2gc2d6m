@@ -16,6 +16,9 @@ This release of the HAL includes support for the following drivers:
 * UART
 
 ### What Changed?
+#### v1.1.1
+* Removed the MTB_DEVICE_SUPPORT component in library.mk
+
 #### v1.1.0
 * Add SPI, LPTimer, SysPm, MemorySPI driver
 

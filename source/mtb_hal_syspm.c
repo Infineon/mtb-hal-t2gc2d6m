@@ -362,6 +362,8 @@ cy_rslt_t mtb_hal_syspm_deepsleep(void)
 }
 
 
+#if (MTB_HAL_DRIVER_AVAILABLE_LPTIMER != 0)
+
 //--------------------------------------------------------------------------------------------------
 // _mtb_hal_syspm_tickless_sleep_deepsleep
 //--------------------------------------------------------------------------------------------------
@@ -415,6 +417,9 @@ cy_rslt_t _mtb_hal_syspm_tickless_sleep_deepsleep(mtb_hal_lptimer_t* obj, uint32
 
     return result;
 }
+
+
+#endif /* (MTB_HAL_DRIVER_AVAILABLE_LPTIMER != 0) */
 
 
 //--------------------------------------------------------------------------------------------------

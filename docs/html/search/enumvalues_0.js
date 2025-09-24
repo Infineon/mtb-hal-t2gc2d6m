@@ -110,12 +110,13 @@ var searchData=
   ['cy_5frslt_5fmodule_5fmiddleware_5fota_5fupdate_107',['CY_RSLT_MODULE_MIDDLEWARE_OTA_UPDATE',['../group__group__result.html#gga9008565cba0207520330a1cb8509a8d0a7084c73c25435f6816fe6788a29f09e9',1,'cy_result.h']]],
   ['cy_5frslt_5fmodule_5fmiddleware_5fpwrconv_108',['CY_RSLT_MODULE_MIDDLEWARE_PWRCONV',['../group__group__result.html#gga9008565cba0207520330a1cb8509a8d0af67fbcae1e502cbfb6f59e200fd0d143',1,'cy_result.h']]],
   ['cy_5frslt_5fmodule_5fmiddleware_5fsecure_5fsockets_109',['CY_RSLT_MODULE_MIDDLEWARE_SECURE_SOCKETS',['../group__group__result.html#gga9008565cba0207520330a1cb8509a8d0afa485d13a5c472c6eca26e92cd68710f',1,'cy_result.h']]],
-  ['cy_5frslt_5fmodule_5fmiddleware_5ftcpip_110',['CY_RSLT_MODULE_MIDDLEWARE_TCPIP',['../group__group__result.html#gga9008565cba0207520330a1cb8509a8d0a2e4bf02f4b5fb8eb0f2f0a926df82657',1,'cy_result.h']]],
-  ['cy_5frslt_5fmodule_5fmiddleware_5ftls_111',['CY_RSLT_MODULE_MIDDLEWARE_TLS',['../group__group__result.html#gga9008565cba0207520330a1cb8509a8d0ae33d2ecd42c95f49cad3ddecb7cf2636',1,'cy_result.h']]],
-  ['cy_5frslt_5fmodule_5fmiddleware_5fubm_112',['CY_RSLT_MODULE_MIDDLEWARE_UBM',['../group__group__result.html#gga9008565cba0207520330a1cb8509a8d0aed332676fe75417e82de862638622005',1,'cy_result.h']]],
-  ['cy_5frslt_5fmodule_5fmiddleware_5fwcm_113',['CY_RSLT_MODULE_MIDDLEWARE_WCM',['../group__group__result.html#gga9008565cba0207520330a1cb8509a8d0ad2b6c60dd40f99cc440ffaa29840c1d7',1,'cy_result.h']]],
-  ['cy_5frslt_5ftype_5ferror_114',['CY_RSLT_TYPE_ERROR',['../group__group__result.html#gga379d2c0a6a4ef22f04e53e8eb4c9ee79aac3d9861cc429ed0a29962e7829f4160',1,'cy_result.h']]],
-  ['cy_5frslt_5ftype_5ffatal_115',['CY_RSLT_TYPE_FATAL',['../group__group__result.html#gga379d2c0a6a4ef22f04e53e8eb4c9ee79a5488dc323f5af93ad1c0218670aad405',1,'cy_result.h']]],
-  ['cy_5frslt_5ftype_5finfo_116',['CY_RSLT_TYPE_INFO',['../group__group__result.html#gga379d2c0a6a4ef22f04e53e8eb4c9ee79a7183d5765ef684a2de4efd4807dc5d8c',1,'cy_result.h']]],
-  ['cy_5frslt_5ftype_5fwarning_117',['CY_RSLT_TYPE_WARNING',['../group__group__result.html#gga379d2c0a6a4ef22f04e53e8eb4c9ee79a63c4a05c8e5321bd44378a894fb947f5',1,'cy_result.h']]]
+  ['cy_5frslt_5fmodule_5fmiddleware_5fsrf_110',['CY_RSLT_MODULE_MIDDLEWARE_SRF',['../group__group__result.html#gga9008565cba0207520330a1cb8509a8d0a5d8e414ca6181903c3211561c9516585',1,'cy_result.h']]],
+  ['cy_5frslt_5fmodule_5fmiddleware_5ftcpip_111',['CY_RSLT_MODULE_MIDDLEWARE_TCPIP',['../group__group__result.html#gga9008565cba0207520330a1cb8509a8d0a2e4bf02f4b5fb8eb0f2f0a926df82657',1,'cy_result.h']]],
+  ['cy_5frslt_5fmodule_5fmiddleware_5ftls_112',['CY_RSLT_MODULE_MIDDLEWARE_TLS',['../group__group__result.html#gga9008565cba0207520330a1cb8509a8d0ae33d2ecd42c95f49cad3ddecb7cf2636',1,'cy_result.h']]],
+  ['cy_5frslt_5fmodule_5fmiddleware_5fubm_113',['CY_RSLT_MODULE_MIDDLEWARE_UBM',['../group__group__result.html#gga9008565cba0207520330a1cb8509a8d0aed332676fe75417e82de862638622005',1,'cy_result.h']]],
+  ['cy_5frslt_5fmodule_5fmiddleware_5fwcm_114',['CY_RSLT_MODULE_MIDDLEWARE_WCM',['../group__group__result.html#gga9008565cba0207520330a1cb8509a8d0ad2b6c60dd40f99cc440ffaa29840c1d7',1,'cy_result.h']]],
+  ['cy_5frslt_5ftype_5ferror_115',['CY_RSLT_TYPE_ERROR',['../group__group__result.html#gga379d2c0a6a4ef22f04e53e8eb4c9ee79aac3d9861cc429ed0a29962e7829f4160',1,'cy_result.h']]],
+  ['cy_5frslt_5ftype_5ffatal_116',['CY_RSLT_TYPE_FATAL',['../group__group__result.html#gga379d2c0a6a4ef22f04e53e8eb4c9ee79a5488dc323f5af93ad1c0218670aad405',1,'cy_result.h']]],
+  ['cy_5frslt_5ftype_5finfo_117',['CY_RSLT_TYPE_INFO',['../group__group__result.html#gga379d2c0a6a4ef22f04e53e8eb4c9ee79a7183d5765ef684a2de4efd4807dc5d8c',1,'cy_result.h']]],
+  ['cy_5frslt_5ftype_5fwarning_118',['CY_RSLT_TYPE_WARNING',['../group__group__result.html#gga379d2c0a6a4ef22f04e53e8eb4c9ee79a63c4a05c8e5321bd44378a894fb947f5',1,'cy_result.h']]]
 ];

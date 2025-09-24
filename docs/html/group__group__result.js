@@ -138,6 +138,7 @@ var group__group__result =
       [ "CY_RSLT_MODULE_MIDDLEWARE_PWRCONV", "group__group__result.html#gga9008565cba0207520330a1cb8509a8d0af67fbcae1e502cbfb6f59e200fd0d143", null ],
       [ "CY_RSLT_MODULE_MIDDLEWARE_ASYNC_TRANSFER", "group__group__result.html#gga9008565cba0207520330a1cb8509a8d0aefc58a4e4e2f1503a394ce1c3691474a", null ],
       [ "CY_RSLT_MODULE_MIDDLEWARE_IPC", "group__group__result.html#gga9008565cba0207520330a1cb8509a8d0ae720c840296c9a7bf97e721ef7c13f69", null ],
-      [ "CY_RSLT_MODULE_MIDDLEWARE_AFX", "group__group__result.html#gga9008565cba0207520330a1cb8509a8d0abc2a0632ca12e2ebd82d3b0a4326a451", null ]
+      [ "CY_RSLT_MODULE_MIDDLEWARE_AFX", "group__group__result.html#gga9008565cba0207520330a1cb8509a8d0abc2a0632ca12e2ebd82d3b0a4326a451", null ],
+      [ "CY_RSLT_MODULE_MIDDLEWARE_SRF", "group__group__result.html#gga9008565cba0207520330a1cb8509a8d0a5d8e414ca6181903c3211561c9516585", null ]
     ] ]
 ];
