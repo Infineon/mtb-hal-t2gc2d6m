@@ -137,7 +137,7 @@ cy_en_syspm_status_t _mtb_hal_syspm_handle_lptimer(cy_stc_syspm_callback_params_
         if (CY_SYSPM_BEFORE_TRANSITION == mode)
         {
             // LPTimer is driven by clk_lf
-            uint32_t lptimer_frequency_hz = Cy_SysClk_ClkLfGetFrequency();
+            uint32_t lptimer_frequency_hz = lptimer->lfclk_freqhz;
 
             // lp_ticks = ms * lp_rate_khz
             uint32_t sleep_ticks = _MTB_HAL_UTILS_HZ_TO_KHZ(
@@ -395,7 +395,7 @@ cy_rslt_t _mtb_hal_syspm_tickless_sleep_deepsleep(mtb_hal_lptimer_t* obj, uint32
         /* We need to do the following steps whether or not the DeepSleep entry succeeded */
         uint32_t final_ticks = mtb_hal_lptimer_read(obj);
         _mtb_hal_syspm_enable_systick();
-        uint32_t lptimer_frequency_hz = Cy_SysClk_ClkLfGetFrequency();
+        uint32_t lptimer_frequency_hz = obj->lfclk_freqhz;
         /* Total Idle ticks, handling rollover */
         uint32_t idle_ticks = (final_ticks < initial_ticks)
                         ? (_MTB_HAL_LPTIMER_MAX_DELAY_TICKS - initial_ticks) + final_ticks
