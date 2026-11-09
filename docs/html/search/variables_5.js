@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['get_5ffrequency_5fhz_0',['get_frequency_hz',['../structmtb__hal__clock__interface__t.html#aff69b498d544dec4d53cd786c88a27e4',1,'mtb_hal_clock_interface_t']]]
+  ['frequency_5fhz_0',['frequency_hz',['../group__group__hal__i2c.html#a451f2c5482c67752c1e51df895a01604',1,'mtb_hal_i2c_cfg_t']]]
 ];

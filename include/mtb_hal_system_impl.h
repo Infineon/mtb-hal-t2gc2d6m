@@ -8,9 +8,9 @@
 * performance is critical the low level functions can be used directly.
 *
 ********************************************************************************
-* \copyright
-* Copyright 2018-2024 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+   * \copyright
+* Copyright(c) 2018-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -38,9 +38,11 @@ extern "C" {
 #if defined(CY_IP_MXS40SRSS) || defined(CY_IP_S8SRSSLT) || defined(CY_IP_MXS28SRSS) || \
     defined(CY_IP_MXS40SSRSS) || defined(CY_IP_MXS22SRSS)
 
+/** \cond INTERNAL */
 #define mtb_hal_system_critical_section_enter()   Cy_SysLib_EnterCriticalSection()
 
 #define mtb_hal_system_critical_section_exit(x)   Cy_SysLib_ExitCriticalSection(x)
+/** \endcond */
 
 #define mtb_hal_system_delay_us(microseconds)     Cy_SysLib_DelayUs(microseconds)
 
@@ -58,72 +60,73 @@ __STATIC_INLINE mtb_hal_reset_reason_t _mtb_hal_system_convert_reset_reason(uint
     //Use int type because cpp interprets result of |= as int. Cast explicitly before returning.
     uint32_t reason = 0;
 
-    if (CY_SYSLIB_RESET_SOFT & pdl_reason)
+    if (0UL != (CY_SYSLIB_RESET_SOFT & pdl_reason))
     {
-        reason |= MTB_HAL_SYSTEM_RESET_SOFT;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_SOFT;
     }
-    if (CY_SYSLIB_RESET_HWWDT & pdl_reason)
+    if (0UL != (CY_SYSLIB_RESET_HWWDT & pdl_reason))
     {
-        reason |= MTB_HAL_SYSTEM_RESET_WDT;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_WDT;
     }
     #if defined(CY_IP_S8SRSSLT)
-    if (CY_SYSLIB_PROT_FAULT & pdl_reason)
+    if (0UL != (CY_SYSLIB_PROT_FAULT & pdl_reason))
     {
-        reason |= MTB_HAL_SYSTEM_RESET_PROTECTION;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_PROTECTION;
     }
     #endif
     #if defined(CY_IP_MXS40SRSS) || defined(CY_IP_MXS40SSRSS) || defined(CY_IP_MXS22SRSS)
-    if (CY_SYSLIB_RESET_ACT_FAULT & pdl_reason)
+    if (0UL != (CY_SYSLIB_RESET_ACT_FAULT & pdl_reason))
     {
-        reason |= MTB_HAL_SYSTEM_RESET_ACTIVE_FAULT;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_ACTIVE_FAULT;
     }
-    if (CY_SYSLIB_RESET_DPSLP_FAULT & pdl_reason)
+    if (0UL != (CY_SYSLIB_RESET_DPSLP_FAULT & pdl_reason))
     {
-        reason |= MTB_HAL_SYSTEM_RESET_DEEPSLEEP_FAULT;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_DEEPSLEEP_FAULT;
     }
-    if (CY_SYSLIB_RESET_HIB_WAKEUP & pdl_reason)
+    if (0UL != (CY_SYSLIB_RESET_HIB_WAKEUP & pdl_reason))
     {
-        reason |= MTB_HAL_SYSTEM_RESET_HIB_WAKEUP;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_HIB_WAKEUP;
     }
-    if (CY_SYSLIB_RESET_CSV_LOSS_WAKEUP & pdl_reason)
+    if (0UL != (CY_SYSLIB_RESET_CSV_LOSS_WAKEUP & pdl_reason))
     {
-        reason |= MTB_HAL_SYSTEM_RESET_SYS_CLK_ERR;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_SYS_CLK_ERR;
     }
-    if (CY_SYSLIB_RESET_CSV_ERROR_WAKEUP & pdl_reason)
+    if (0UL != (CY_SYSLIB_RESET_CSV_ERROR_WAKEUP & pdl_reason))
     {
-        reason |= MTB_HAL_SYSTEM_RESET_SYS_CLK_ERR;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_SYS_CLK_ERR;
     }
-    if ((CY_SYSLIB_RESET_SWWDT0 | CY_SYSLIB_RESET_SWWDT1 | CY_SYSLIB_RESET_SWWDT2 |
-         CY_SYSLIB_RESET_SWWDT3) & pdl_reason)
+    if (0UL != ((CY_SYSLIB_RESET_SWWDT0 | CY_SYSLIB_RESET_SWWDT1 | CY_SYSLIB_RESET_SWWDT2 |
+                 CY_SYSLIB_RESET_SWWDT3) & pdl_reason))
     {
-        reason |= MTB_HAL_SYSTEM_RESET_WDT;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_WDT;
     }
     #endif // if defined(CY_IP_MXS40SRSS) || defined(CY_IP_MXS40SSRSS) || defined(CY_IP_MXS22SRSS)
     #if defined(CY_SYSLIB_RESET_SOFT0) && defined(CY_SYSLIB_RESET_SOFT1) \
     && defined(CY_SYSLIB_RESET_SOFT2)
-    if ((CY_SYSLIB_RESET_SOFT0 | CY_SYSLIB_RESET_SOFT1 | CY_SYSLIB_RESET_SOFT2) & pdl_reason)
+    if (0UL !=
+        ((CY_SYSLIB_RESET_SOFT0 | CY_SYSLIB_RESET_SOFT1 | CY_SYSLIB_RESET_SOFT2) & pdl_reason))
     {
-        reason |= MTB_HAL_SYSTEM_RESET_SOFT;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_SOFT;
     }
     #endif // if defined(CY_SYSLIB_RESET_SOFT0) && defined(CY_SYSLIB_RESET_SOFT1)
     //                                   && defined(CY_SYSLIB_RESET_SOFT2)
     #if (SRSS_WCOCSV_PRESENT != 0U)
-    if (CY_SYSLIB_RESET_CSV_WCO_LOSS & pdl_reason)
+    if (0UL != (CY_SYSLIB_RESET_CSV_WCO_LOSS & pdl_reason))
     {
-        reason |= MTB_HAL_SYSTEM_RESET_WCO_ERR;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_WCO_ERR;
     }
     #endif
     #if (SRSS_MASK_HFCSV != 0U)
-    if ((CY_SYSLIB_RESET_HFCLK_LOSS | CY_SYSLIB_RESET_HFCLK_ERR) & pdl_reason)
+    if (0UL != ((CY_SYSLIB_RESET_HFCLK_LOSS | CY_SYSLIB_RESET_HFCLK_ERR) & pdl_reason))
     {
-        reason |= MTB_HAL_SYSTEM_RESET_SYS_CLK_ERR;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_SYS_CLK_ERR;
     }
     #endif
 
     #if defined(CY_IP_MXS40SSRSS)
     if ((reason == MTB_HAL_SYSTEM_RESET_NONE) && Cy_SysLib_IsDSRAMWarmBootEntry())
     {
-        reason |= MTB_HAL_SYSTEM_RESET_WARMBOOT;
+        reason |= (uint32_t)MTB_HAL_SYSTEM_RESET_WARMBOOT;
     }
     #endif
 

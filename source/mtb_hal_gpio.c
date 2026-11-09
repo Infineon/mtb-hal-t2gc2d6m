@@ -6,9 +6,9 @@
 * a wrapper around the lower level PDL API.
 *
 ********************************************************************************
-* \copyright
-* Copyright 2018-2022 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+   * \copyright
+* Copyright(c) 2018-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -89,7 +89,7 @@ cy_rslt_t mtb_hal_gpio_process_interrupt(mtb_hal_gpio_t* obj)
     {
         /* Each supported architecture much have a way to check the interrupt status of a pin on
            a port. */
-        if (_mtb_hal_gpio_get_interrupt_status_masked(obj))
+        if (0U != _mtb_hal_gpio_get_interrupt_status_masked(obj))
         {
             uint8_t                       pin = obj->pin_num;
             mtb_hal_gpio_event_t          event = (mtb_hal_gpio_event_t)Cy_GPIO_GetInterruptEdge(

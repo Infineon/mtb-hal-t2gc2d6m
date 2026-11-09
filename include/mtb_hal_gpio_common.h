@@ -6,9 +6,9 @@
 * IOCL v1, IOSS v3, MXS40S IOSS v1)
 *
 ********************************************************************************
-* \copyright
-* Copyright 2024 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation.
+   * \copyright
+* Copyright(c) 2024-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -68,7 +68,7 @@ __STATIC_INLINE uint32_t _mtb_hal_gpio_get_interrupt_status_masked(mtb_hal_gpio_
 /** Return the interrupt cause */
 __STATIC_INLINE uint32_t _mtb_hal_gpio_get_interrupt_cause(mtb_hal_gpio_t* obj)
 {
-    return 1 << (obj->port_num);
+    return 1UL << (obj->port_num);
 }
 
 

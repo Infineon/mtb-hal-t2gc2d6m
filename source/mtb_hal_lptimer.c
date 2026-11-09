@@ -8,9 +8,9 @@
 * can be used directly.
 *
 ********************************************************************************
-* \copyright
-* Copyright 2018-2025 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+   * \copyright
+* Copyright(c) 2018-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -88,7 +88,7 @@ void mtb_hal_lptimer_enable_event(mtb_hal_lptimer_t* obj, mtb_hal_lptimer_event_
     CY_ASSERT(event == MTB_HAL_LPTIMER_COMPARE_MATCH);
     CY_UNUSED_PARAMETER(event);
 
-    obj->isr_instruction &= ~_MTB_HAL_LPTIMER_ISR_CALL_USER_CB_MASK;
+    obj->isr_instruction &= (uint8_t)(~(uint8_t)_MTB_HAL_LPTIMER_ISR_CALL_USER_CB_MASK);
     obj->isr_instruction |= (uint8_t)enable;
 
     if (enable)
@@ -100,9 +100,9 @@ void mtb_hal_lptimer_enable_event(mtb_hal_lptimer_t* obj, mtb_hal_lptimer_event_
         #if (_MTB_HAL_IRQ_MUXING)
         /* We may be in a critical section. Only clear the interrupt status if there isn't a pending
            interrupt */
-        if (Cy_MCWDT_GetInterruptStatus(obj->base) != 0)
+        if (_mtb_hal_lptimer_get_interrupt_status(obj->base) != 0)
         {
-            obj->isr_instruction |= _MTB_HAL_LPTIMER_ISR_CRITICAL_SECTION_MASK;
+            obj->isr_instruction |= (uint8_t)_MTB_HAL_LPTIMER_ISR_CRITICAL_SECTION_MASK;
         }
         else
         #endif
@@ -118,9 +118,7 @@ void mtb_hal_lptimer_enable_event(mtb_hal_lptimer_t* obj, mtb_hal_lptimer_event_
 //--------------------------------------------------------------------------------------------------
 uint32_t mtb_hal_lptimer_read(const mtb_hal_lptimer_t* obj)
 {
-    uint32_t count = Cy_MCWDT_GetCount(obj->base, CY_MCWDT_COUNTER2);
-    count = _mtb_hal_lptimer_read(obj, count);
-    return count;
+    return _mtb_hal_lptimer_read(obj);
 }
 
 

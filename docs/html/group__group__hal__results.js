@@ -1,13 +1,20 @@
 var group__group__hal__results =
 [
+    [ "ADC HAL Results", "group__group__hal__results__adc.html", "group__group__hal__results__adc" ],
     [ "Clock HAL Results", "group__group__hal__results__clock.html", "group__group__hal__results__clock" ],
+    [ "DMA HAL Results", "group__group__hal__results__dma.html", "group__group__hal__results__dma" ],
     [ "GPIO HAL Results", "group__group__hal__results__gpio.html", "group__group__hal__results__gpio" ],
+    [ "I2C HAL Results", "group__group__hal__results__i2c.html", "group__group__hal__results__i2c" ],
     [ "LPTimer HAL Results", "group__group__hal__results__lptimer.html", "group__group__hal__results__lptimer" ],
     [ "MemorySPI HAL Results", "group__group__hal__results__memoryspi.html", "group__group__hal__results__memoryspi" ],
     [ "NVM HAL Results", "group__group__hal__results__nvm.html", "group__group__hal__results__nvm" ],
+    [ "PWM HAL Results", "group__group__hal__results__pwm.html", "group__group__hal__results__pwm" ],
+    [ "RTC HAL Results", "group__group__hal__results__rtc.html", "group__group__hal__results__rtc" ],
     [ "SPI HAL Results", "group__group__hal__results__spi.html", "group__group__hal__results__spi" ],
     [ "SYSPM HAL Results", "group__group__hal__results__syspm.html", "group__group__hal__results__syspm" ],
     [ "SYSTEM HAL Results", "group__group__hal__results__system.html", "group__group__hal__results__system" ],
+    [ "Timer HAL Results", "group__group__hal__results__timer.html", "group__group__hal__results__timer" ],
+    [ "TRNG HAL Results", "group__group__hal__results__trng.html", "group__group__hal__results__trng" ],
     [ "UART HAL Results", "group__group__hal__results__uart.html", "group__group__hal__results__uart" ],
     [ "mtb_hal_rslt_module_chip", "group__group__hal__results.html#ga282238a3cd4da88799258412ba837ceb", [
       [ "MTB_HAL_RSLT_MODULE_ADC", "group__group__hal__results.html#gga282238a3cd4da88799258412ba837ceba0fb2a348d3639460b493dba0ac01520b", null ],

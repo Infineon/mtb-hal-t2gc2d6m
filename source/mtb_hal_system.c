@@ -8,9 +8,9 @@
 * performance is critical the low level functions can be used directly.
 *
 ********************************************************************************
-* \copyright
-* Copyright 2018-2024 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+   * \copyright
+* Copyright(c) 2018-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -44,8 +44,7 @@ extern "C"
 
 #if !defined(MTB_HAL_DISABLE_WEAK_FUNC_IMPL)
 /* Overrides weak implemenation for Cy_SysLib_Rtos_Delay to provide a way
- * to call into a RTOS if so configured. This function is only available
- * in mtb-pdl-cat1 version 2.2.0 or later.
+ * to call into a RTOS if so configured.
  */
 void Cy_SysLib_Rtos_Delay(uint32_t milliseconds)
 {

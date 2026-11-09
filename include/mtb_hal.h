@@ -18,9 +18,9 @@
 * in the relevant driver header files.
 *
 ********************************************************************************
-* \copyright
-* Copyright 2018-2022 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+   * \copyright
+* Copyright(c) 2018-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -42,9 +42,12 @@
  * This section documents the basic types and macros that are used by multiple HAL drivers.
  */
 
+/* Defined here because core-lib's cy_result.h refers to this group, but the file that declares it
+ * is not part of the doxygen input for this asset. */
 /**
- * \addtogroup group_result Result Type
+ * \addtogroup group_abstraction Abstraction Layer
  * \ingroup group_hal_types
+ * This section documents the types shared with the ModusToolbox™ abstraction layers.
  */
 
 /**

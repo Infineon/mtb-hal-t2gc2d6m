@@ -3,8 +3,8 @@
 *
 *********************************************************************************
 * \copyright
-* Copyright 2024-2025 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+* Copyright(c) 2024-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -52,11 +52,10 @@ extern "C" {
  */
 typedef struct
 {
-    cy_stc_syspm_callback_t        pdl_cb;
-    cy_stc_syspm_callback_params_t cb_params;
-    /* Actually a mtb_hal_syspm_callback_state_t, store as uint to avoid circular includes */
-    uint32_t                       state;
-    void*                          user_arg;
+    cy_stc_syspm_callback_t        pdl_cb; /**< PDL callback structure */
+    cy_stc_syspm_callback_params_t cb_params; /**< Callback parameters */
+    uint32_t                       state; /**< Callback state (mtb_hal_syspm_callback_state_t) */
+    void*                          user_arg; /**< User argument */
 } mtb_hal_syspm_callback_data_t;
 
 

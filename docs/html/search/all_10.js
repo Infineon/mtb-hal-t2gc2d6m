@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['tx_5fbuffer_0',['tx_buffer',['../structmtb__hal__spi__t.html#aaf8273502fdf83b0b473a0ddebe5eff2',1,'mtb_hal_spi_t']]],
-  ['tx_5fbuffer_5fsize_1',['tx_buffer_size',['../structmtb__hal__spi__t.html#a8f806c9852bd11f3c388ea010b2eb75e',1,'mtb_hal_spi_t']]],
-  ['tx_5fpin_2',['tx_pin',['../structmtb__hal__uart__t.html#a2a850fbd60ac6fad7ac6878ffcefceaa',1,'mtb_hal_uart_t::tx_pin()'],['../structmtb__hal__uart__configurator__t.html#a0db67258f138ab673267722e0be7d139',1,'mtb_hal_uart_configurator_t::tx_pin()']]],
-  ['tx_5fport_3',['tx_port',['../structmtb__hal__uart__configurator__t.html#ad9721289298e4b879b9503bcd9dbeffc',1,'mtb_hal_uart_configurator_t']]],
-  ['type_4',['type',['../group__group__hal__clock.html#a5ae97ecdc6bdc58a5eac392bc9247f48',1,'mtb_hal_clock_tolerance_t']]]
+  ['latest_20result_0',['Snippet 2: Single-channel ADC initialization set to start a fresh conversion and read the latest result.',['../group__group__hal__adc.html#subsection_adc_snippet_2',1,'']]],
+  ['layer_1',['Layer',['../group__group__abstraction.html',1,'Abstraction Layer'],['../index.html',1,'Hardware Abstraction Layer']]],
+  ['limitations_2',['limitations',['../group__group__hal__impl__memoryspi.html#section_hal_impl_memoryspi_init_cfg',1,'Configurator-generated features limitations'],['../group__group__hal__impl__spi.html#section_hal_impl_spi_init_cfg',1,'Configurator-generated features limitations']]],
+  ['locking_3',['Snippet 1: Simple deep sleep locking',['../group__group__hal__syspm.html#subsection_syspm_snippet_1',1,'']]],
+  ['low_20power_20timer_4',['Low Power Timer',['../group__group__hal__lptimer.html',1,'LPTimer (Low-Power Timer)'],['../group__group__hal__impl__lptimer.html',1,'LPTimer (Low-Power Timer)']]],
+  ['lptimer_20hal_20results_5',['LPTimer HAL Results',['../group__group__hal__results__lptimer.html',1,'']]],
+  ['lptimer_20initialization_20with_20default_20configuration_6',['Snippet 1: LPTimer initialization with Default configuration',['../group__group__hal__lptimer.html#subsection_lptimer_snippet_1',1,'']]],
+  ['lptimer_20interrupts_7',['Snippet 2: LPTimer interrupts',['../group__group__hal__lptimer.html#subsection_lptimer_snippet_2',1,'']]],
+  ['lptimer_20low_20power_20timer_8',['LPTimer Low Power Timer',['../group__group__hal__lptimer.html',1,'LPTimer (Low-Power Timer)'],['../group__group__hal__impl__lptimer.html',1,'LPTimer (Low-Power Timer)']]]
 ];

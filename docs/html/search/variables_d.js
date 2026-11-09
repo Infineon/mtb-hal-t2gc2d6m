@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['tx_5fbuffer_0',['tx_buffer',['../structmtb__hal__spi__t.html#aaf8273502fdf83b0b473a0ddebe5eff2',1,'mtb_hal_spi_t']]],
-  ['tx_5fbuffer_5fsize_1',['tx_buffer_size',['../structmtb__hal__spi__t.html#a8f806c9852bd11f3c388ea010b2eb75e',1,'mtb_hal_spi_t']]],
-  ['tx_5fpin_2',['tx_pin',['../structmtb__hal__uart__t.html#a2a850fbd60ac6fad7ac6878ffcefceaa',1,'mtb_hal_uart_t::tx_pin()'],['../structmtb__hal__uart__configurator__t.html#a0db67258f138ab673267722e0be7d139',1,'mtb_hal_uart_configurator_t::tx_pin()']]],
-  ['tx_5fport_3',['tx_port',['../structmtb__hal__uart__configurator__t.html#ad9721289298e4b879b9503bcd9dbeffc',1,'mtb_hal_uart_configurator_t']]],
-  ['type_4',['type',['../group__group__hal__clock.html#a5ae97ecdc6bdc58a5eac392bc9247f48',1,'mtb_hal_clock_tolerance_t']]]
+  ['sector_5fsize_0',['sector_size',['../group__group__hal__nvm.html#a2ecef525293d19104f82025fe279fdba',1,'mtb_hal_nvm_region_info_t']]],
+  ['set_5fenabled_1',['set_enabled',['../structmtb__hal__clock__interface__t.html#a3b42e1b7f2e95c17c6724bdc8a265603',1,'mtb_hal_clock_interface_t']]],
+  ['set_5ffrequency_5fhz_2',['set_frequency_hz',['../structmtb__hal__clock__interface__t.html#a27ba2457ed03e2f69470776077c711ac',1,'mtb_hal_clock_interface_t']]],
+  ['size_3',['size',['../group__group__hal__nvm.html#a68cffdca107870ae4476022817aad195',1,'mtb_hal_nvm_region_info_t::size'],['../group__group__hal__memoryspi.html#af7bd60b75b29d79b660a2859395c1a24',1,'mtb_hal_memoryspi_command_t.address::size'],['../group__group__hal__memoryspi.html#af7bd60b75b29d79b660a2859395c1a24',1,'mtb_hal_memoryspi_command_t.mode_bits::size']]],
+  ['start_5faddress_4',['start_address',['../group__group__hal__nvm.html#ad583006fcebf0a48dcf88f48d115ea27',1,'mtb_hal_nvm_region_info_t']]],
+  ['state_5',['state',['../group__group__hal__impl__hw__types.html#a79821aacd78ec8e9a9eaa793461ba27e',1,'mtb_hal_syspm_callback_data_t::state'],['../group__group__hal__syspm.html#a039495e6cfbcdb942f66998d8162e68f',1,'mtb_hal_syspm_callback_params_t::state']]]
 ];

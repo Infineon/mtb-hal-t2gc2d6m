@@ -6,9 +6,9 @@
 * device clock
 *
 ********************************************************************************
-* \copyright
-* Copyright 2024 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation.
+   * \copyright
+* Copyright(c) 2024-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -123,7 +123,7 @@ cy_rslt_t mtb_hal_clock_set_peri_clock_freq(const void* clk, uint32_t frequency,
     if (dividerType >= CY_SYSCLK_DIV_16_5_BIT)
     {
         double closest_freq = rslt_freq;
-        double combined_div = 0;
+        double combined_div = 0.0;
         // 31U = max fractional divider value
         while ((closest_freq > (double)frequency) && dividerFracValue < 31U)
         {
@@ -224,8 +224,16 @@ uint32_t mtb_hal_clock_get_peri_src_clock_freq(const void* clk)
 {
     CY_ASSERT(NULL != clk);
     en_clk_dst_t clk_dst = ((mtb_hal_peri_div_t*)clk)->clk_dst;
+    uint32_t src_freq = 0u;
 
-    uint32_t src_freq = Cy_SysClk_ClkHfGetFrequency(Cy_Sysclk_PeriPclkGetClkHfNum(clk_dst));
+    /* MXPERI versions 1 & 2 do not support PERI-group HF lookup.
+       CLK_PERI is clocked by HF0 on these devices. */
+    #if defined(CY_IP_MXPERI) && defined(CY_IP_MXPERI_VERSION) && (CY_IP_MXPERI_VERSION <= 2)
+    src_freq = Cy_SysClk_ClkHfGetFrequency(0UL);
+    #else
+    src_freq = Cy_SysClk_ClkHfGetFrequency(Cy_Sysclk_PeriPclkGetClkHfNum((uint32_t)clk_dst));
+    #endif /* CY_IP_MXPERI_VERSION <= 2 */
+
     #if defined(CY_IP_MXS40SRSS)
     // May have a PERI clock between the HF and the peri divider, if so adjust for its divider
     uint32_t peri_grpNum = (((uint32_t)clk_dst) & PERI_PCLK_GR_NUM_Msk) >> PERI_PCLK_GR_NUM_Pos;
@@ -266,11 +274,11 @@ cy_rslt_t mtb_hal_clock_set_hf_clock_enabled(const void* clk, bool enable)
 {
     if (enable)
     {
-        return Cy_SysClk_ClkHfEnable(((mtb_hal_hf_clock_t*)clk)->inst_num);
+        return (cy_rslt_t)Cy_SysClk_ClkHfEnable(((mtb_hal_hf_clock_t*)clk)->inst_num);
     }
     else
     {
-        return Cy_SysClk_ClkHfDisable(((mtb_hal_hf_clock_t*)clk)->inst_num);
+        return (cy_rslt_t)Cy_SysClk_ClkHfDisable(((mtb_hal_hf_clock_t*)clk)->inst_num);
     }
 }
 

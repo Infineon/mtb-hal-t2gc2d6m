@@ -6,9 +6,9 @@
 * a wrapper around the lower level PDL API.
 *
 ********************************************************************************
-* \copyright
-* Copyright 2018-2022 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+   * \copyright
+* Copyright(c) 2018-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -75,6 +75,18 @@ __STATIC_INLINE bool mtb_hal_spi_is_busy(mtb_hal_spi_t* obj)
     return Cy_SCB_SPI_IsBusBusy(obj->base) || (_MTB_HAL_SPI_PENDING_NONE != obj->pending);
 }
 
+
+//--------------------------------------------------------------------------------------------------
+// _mtb_hal_spi_enable
+//--------------------------------------------------------------------------------------------------
+__STATIC_INLINE cy_rslt_t _mtb_hal_spi_enable(mtb_hal_spi_t* obj, bool enable)
+{
+    enable ? Cy_SCB_SPI_Enable(obj->base) : Cy_SCB_SPI_Disable(obj->base, obj->context);
+    return CY_RSLT_SUCCESS;
+}
+
+
+#define mtb_hal_spi_enable _mtb_hal_spi_enable
 
 //--------------------------------------------------------------------------------------------------
 // mtb_hal_spi_set_fifo_level_internal

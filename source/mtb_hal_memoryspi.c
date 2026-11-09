@@ -6,9 +6,9 @@
 * This is a wrapper around the lower level PDL API.
 *
 ********************************************************************************
-* \copyright
-* Copyright 2018-2024 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+   * \copyright
+* Copyright(c) 2018-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -108,7 +108,10 @@ static void _mtb_hal_memoryspi_cb_wrapper(uint32_t event)
     {
         mtb_hal_memoryspi_event_callback_t callback =
             (mtb_hal_memoryspi_event_callback_t)obj->callback_data.callback;
-        callback(obj->callback_data.callback_arg, hal_event);
+        if (NULL != callback)
+        {
+            callback(obj->callback_data.callback_arg, hal_event);
+        }
     }
 }
 
@@ -143,6 +146,7 @@ static cy_en_smif_txfr_width_t _mtb_hal_memoryspi_convert_bus_width(
 
         default:
             mtb_hal_bus_width = CY_SMIF_WIDTH_SINGLE;
+            break;
     }
 
     return mtb_hal_bus_width;
@@ -197,7 +201,7 @@ static void _mtb_hal_memoryspi_uint32_to_byte_array(uint32_t value, uint8_t* byt
     do
     {
         size--;
-        byteArray[size + startPos] = (uint8_t)(value & 0xFF);
+        byteArray[size + startPos] = (uint8_t)(value & 0xFFU);
         value >>= 0x08;
     } while (size > 0);
 }
@@ -284,7 +288,7 @@ static cy_rslt_t _mtb_hal_memoryspi_command_transfer(mtb_hal_memoryspi_t* obj,
             #if (CY_IP_MXSMIF_VERSION < 3)
             result =
                 (cy_rslt_t)Cy_SMIF_TransmitCommand(obj->base,
-                                                   (uint8_t)(command->instruction.value & 0xFF),
+                                                   (uint8_t)(command->instruction.value & 0xFFU),
                                                    _mtb_hal_memoryspi_convert_bus_width(command->
                                                                                         instruction.
                                                                                         bus_width), cmd_param,
@@ -341,24 +345,25 @@ cy_rslt_t mtb_hal_memoryspi_setup(mtb_hal_memoryspi_t* obj,
     obj->base = config->base;
     //If multiple csel are specified, the first one is used as the active one
     bool foundValidCsel = false;
-    for (int i = 0; i < 4; i++)
+    for (uint32_t i = 0; i < 4U; i++)
     {
         if (config->csel[i] != false)
         {
+            uint32_t csel_mask = ((uint32_t)1U) << i;
             if (foundValidCsel == false)
             {
-                obj->chip_select = (cy_en_smif_slave_select_t)(1 << i);
+                obj->chip_select = (cy_en_smif_slave_select_t)csel_mask;
                 foundValidCsel = true;
             }
             /*This is to keep track of all the csel that are passed in so that we only allow
              * configured csel to be set as active.*/
-            obj->configured_csel |= (1 << i);
+            obj->configured_csel |= csel_mask;
         }
     }
 
     obj->clock = config->clock;
     obj->context = context;
-    obj->enabled_events = MTB_HAL_MEMORYSPI_EVENT_NONE;
+    obj->enabled_events = (uint32_t)MTB_HAL_MEMORYSPI_EVENT_NONE;
     obj->callback_data.callback = NULL;
     obj->callback_data.callback_arg = NULL;
 
@@ -406,7 +411,7 @@ cy_rslt_t mtb_hal_memoryspi_select_active_csel(mtb_hal_memoryspi_t* obj,
 {
     CY_ASSERT(NULL != obj);
     cy_rslt_t status = CY_RSLT_SUCCESS;
-    if ((obj->configured_csel & csel) != 0)
+    if ((obj->configured_csel & (uint32_t)csel) != 0)
     {
         obj->chip_select = (cy_en_smif_slave_select_t)csel;
     }
@@ -698,14 +703,14 @@ cy_rslt_t mtb_hal_memoryspi_transfer(
     }
     else
     {
-        if ((tx_data != NULL) && tx_size)
+        if ((tx_data != NULL) && (tx_size != 0U))
         {
             status = mtb_hal_memoryspi_write(obj, command, address, tx_data, &tx_size);
         }
 
         if (status == CY_RSLT_SUCCESS)
         {
-            if ((rx_data != NULL) && rx_size)
+            if ((rx_data != NULL) && (rx_size != 0U))
             {
                 status = mtb_hal_memoryspi_read(obj, command, address, rx_data, &rx_size);
             }
@@ -737,11 +742,11 @@ void mtb_hal_memoryspi_enable_event(mtb_hal_memoryspi_t* obj, mtb_hal_memoryspi_
 {
     if (enable)
     {
-        obj->enabled_events |= event;
+        obj->enabled_events |= (uint32_t)event;
     }
     else
     {
-        obj->enabled_events &= ~event;
+        obj->enabled_events &= ~(uint32_t)event;
     }
 }
 
@@ -775,7 +780,7 @@ bool mtb_hal_memoryspi_is_async_in_progress(mtb_hal_memoryspi_t* obj)
 {
     CY_ASSERT(obj->base != NULL);
 
-    uint32_t smif_status = Cy_SMIF_GetTransferStatus(obj->base, obj->context);
+    uint32_t smif_status = (uint32_t)Cy_SMIF_GetTransferStatus(obj->base, obj->context);
 
     return ((CY_SMIF_SEND_BUSY == smif_status) || (CY_SMIF_RX_BUSY == smif_status));
 }

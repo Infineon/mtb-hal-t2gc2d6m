@@ -6,9 +6,9 @@
 * a wrapper around the lower level PDL API.
 *
 ********************************************************************************
-* \copyright
-* Copyright 2018-2022 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+   * \copyright
+* Copyright(c) 2018-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -65,7 +65,7 @@ extern "C" {
 
 __STATIC_INLINE void mtb_hal_gpio_write_internal(mtb_hal_gpio_t* obj, bool value)
 {
-    Cy_GPIO_Write(obj->port_addr, (uint32_t)obj->pin_num, value);
+    Cy_GPIO_Write(obj->port_addr, (uint32_t)obj->pin_num, (uint32_t)value);
 }
 
 
@@ -231,6 +231,18 @@ __STATIC_INLINE void mtb_hal_gpio_port_read_internal(mtb_hal_gpio_port_t* port, 
 
 
 #define mtb_hal_gpio_port_read(port, value) mtb_hal_gpio_port_read_internal(port, value)
+
+
+//--------------------------------------------------------------------------------------------------
+// _mtb_hal_gpio_read_out
+//--------------------------------------------------------------------------------------------------
+__STATIC_INLINE bool _mtb_hal_gpio_read_out(mtb_hal_gpio_t* obj)
+{
+    return 0 != Cy_GPIO_ReadOut(obj->port_addr, (uint32_t)obj->pin_num);
+}
+
+
+#define mtb_hal_gpio_read_out _mtb_hal_gpio_read_out
 
 #endif /* MTB_HAL_DRIVER_AVAILABLE_GPIO_PORT */
 

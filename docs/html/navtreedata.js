@@ -25,30 +25,20 @@
 var NAVTREE =
 [
   [ "Hardware Abstraction Layer (HAL)", "index.html", [
-    [ "Hardware Abstraction Layer", "index.html", [
-      [ "Overview", "index.html#autotoc_md1", null ],
-      [ "API Structure", "index.html#autotoc_md2", null ],
-      [ "Initialization Sequence", "index.html#autotoc_md3", null ],
-      [ "Interrupt Handling", "index.html#autotoc_md4", null ],
-      [ "Event Handling", "index.html#autotoc_md5", null ],
-      [ "Clock Management", "index.html#autotoc_md6", null ],
-      [ "Compile Time Dependencies", "index.html#autotoc_md7", null ],
-      [ "Error reporting", "index.html#autotoc_md8", null ],
-      [ "RTOS Integration", "index.html#autotoc_md9", null ],
-      [ "Data Cache Management", "index.html#autotoc_md10", null ],
-      [ "More information", "index.html#autotoc_md11", null ]
-    ] ],
+    [ "Hardware Abstraction Layer", "index.html", "index" ],
     [ "DCACHE Management", "md_asset_dcache.html", null ],
-    [ "HAL API Reference", "modules.html", "modules" ]
+    [ "HAL API Reference", "topics.html", "topics" ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"group__group__hal.html",
-"group__group__hal__results__memoryspi.html#gabbec9faf3a5c14da42ee04e01da01f06",
-"group__group__result.html#gga9008565cba0207520330a1cb8509a8d0ac2fc66f31cf1775461fde206aa9cd19a"
+"group__group__abstraction.html",
+"group__group__hal__impl__trng.html",
+"group__group__hal__results__pwm.html#ga02037d12d9b2f93021a0a6b0dba1a7c0",
+"group__group__result.html#gga9008565cba0207520330a1cb8509a8d0a55d1a53e882ccd03bc3b1390842d4cc0"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'click to disable panel synchronization';
+var SYNCOFFMSG = 'click to enable panel synchronization';
+var LISTOFALLMEMBERS = 'List of all members';

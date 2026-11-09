@@ -6,8 +6,8 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2024-2025 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+* Copyright(c) 2024-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -64,7 +64,7 @@
  * with \ref CY_RSLT_MODULE_DRIVERS_PDL_BASE. The exact errors are documented for each
  * driver in the
  * <a href="https://infineon.github.io/mtb-pdl-cat1/pdl_api_reference_manual/html/index.html">
- * mtb-pdl-cat1 documentation</a>.
+ * PDL documentation</a>.
  */
 
 /**
@@ -82,14 +82,21 @@ extern "C" {
 
 #include "mtb_hal_general_types.h"
 
+#include "mtb_hal_hw_types_adc.h"
 #include "mtb_hal_hw_types_clock.h"
+#include "mtb_hal_hw_types_dma.h"
 #include "mtb_hal_hw_types_gpio.h"
+#include "mtb_hal_hw_types_i2c.h"
 #include "mtb_hal_hw_types_lptimer.h"
 #include "mtb_hal_hw_types_memoryspi.h"
 #include "mtb_hal_hw_types_nvm.h"
+#include "mtb_hal_hw_types_pwm.h"
+#include "mtb_hal_hw_types_rtc.h"
 #include "mtb_hal_hw_types_spi.h"
 #include "mtb_hal_hw_types_syspm.h"
 #include "mtb_hal_hw_types_system.h"
+#include "mtb_hal_hw_types_trng.h"
+#include "mtb_hal_hw_types_timer.h"
 #include "mtb_hal_hw_types_uart.h"
 
 #if defined(__cplusplus)

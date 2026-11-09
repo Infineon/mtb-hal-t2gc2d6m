@@ -3,8 +3,8 @@
 *
 *********************************************************************************
 * \copyright
-* Copyright 2024-2025 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+* Copyright(c) 2024-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -31,9 +31,10 @@
 // The following values do not apply to this IP, give them
 // placeholder values to satisfy the interface
 #define MTB_HAL_MAP_SYSPM_AFTER_DS_WFI_TRANSITION  (5u)
-#define MTB_HAL_MAP_SYSPM_CB_DEEPSLEEP_RAM  (4u)
-#define MTB_HAL_MAP_SYSPM_CB_NORMAL         (5u)
-#define MTB_HAL_MAP_SYSPM_CB_LOW            (6u)
-#define MTB_HAL_MAP_SYSPM_CB_HIGH           (7u)
+#define MTB_HAL_MAP_SYSPM_CB_DEEPSLEEP_RAM         (4u)
+#define MTB_HAL_MAP_SYSPM_CB_NORMAL                (5u)
+#define MTB_HAL_MAP_SYSPM_CB_LOW                   (6u)
+#define MTB_HAL_MAP_SYSPM_CB_HIGH                  (7u)
+#define MTB_HAL_MAP_SYSPM_CB_HIBERNATE_RAM         (9u)
 
-#endif
+#endif // if defined(CY_IP_MXS40SRSS)

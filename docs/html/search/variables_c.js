@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['sector_5fsize_0',['sector_size',['../group__group__hal__nvm.html#a2ecef525293d19104f82025fe279fdba',1,'mtb_hal_nvm_region_info_t']]],
-  ['set_5fenabled_1',['set_enabled',['../structmtb__hal__clock__interface__t.html#a3b42e1b7f2e95c17c6724bdc8a265603',1,'mtb_hal_clock_interface_t']]],
-  ['set_5ffrequency_5fhz_2',['set_frequency_hz',['../structmtb__hal__clock__interface__t.html#a27ba2457ed03e2f69470776077c711ac',1,'mtb_hal_clock_interface_t']]],
-  ['size_3',['size',['../group__group__hal__nvm.html#a68cffdca107870ae4476022817aad195',1,'mtb_hal_nvm_region_info_t']]],
-  ['start_5faddress_4',['start_address',['../group__group__hal__nvm.html#ad583006fcebf0a48dcf88f48d115ea27',1,'mtb_hal_nvm_region_info_t']]],
-  ['state_5',['state',['../group__group__hal__syspm.html#a039495e6cfbcdb942f66998d8162e68f',1,'mtb_hal_syspm_callback_params_t']]]
+  ['raw_0',['raw',['../group__group__result.html#aa46cfbec8a99e1c9bce73b87f1f988c9',1,'cy_rslt_decode_t']]],
+  ['region_5fcount_1',['region_count',['../group__group__hal__nvm.html#a65c06df727ec049daafae955c195f984',1,'mtb_hal_nvm_info_t']]],
+  ['regions_2',['regions',['../group__group__hal__nvm.html#a17c1a11f78a4da1a14c127f2d3da2698',1,'mtb_hal_nvm_info_t']]],
+  ['rslt_5fmodule_3',['rslt_module',['../group__group__result.html#afa7ea47ccc2c17597baa5ec32199d9c1',1,'cy_rslt_decode_t.__unnamed0__']]],
+  ['rx_5fbuffer_4',['rx_buffer',['../structmtb__hal__spi__t.html#a60aca80f9b06075d5f1bf681a4359917',1,'mtb_hal_spi_t']]],
+  ['rx_5fbuffer_5fsize_5',['rx_buffer_size',['../structmtb__hal__spi__t.html#af96103552e3a150f1ce95c6be43d0538',1,'mtb_hal_spi_t']]],
+  ['rx_5ftarget_5fbuff_6',['rx_target_buff',['../structmtb__hal__i2c__t.html#a27e010f2f670c6de7c0bd2d01c6396b9',1,'mtb_hal_i2c_t']]]
 ];

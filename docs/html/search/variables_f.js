@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write_5ffill_0',['write_fill',['../structmtb__hal__spi__t.html#abcf4008cff81d0a7ebb67d2e3443e464',1,'mtb_hal_spi_t']]]
+  ['user_5farg_0',['user_arg',['../group__group__hal__impl__hw__types.html#a95d7e27bea5be1829b11ec29070e9546',1,'mtb_hal_syspm_callback_data_t']]]
 ];

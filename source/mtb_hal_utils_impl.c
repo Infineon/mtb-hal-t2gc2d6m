@@ -5,9 +5,9 @@
 * Provides utility functions for working with the HAL.
 *
 ********************************************************************************
-* \copyright
-* Copyright 2018-2022 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+   * \copyright
+* Copyright(c) 2018-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -25,7 +25,6 @@
 *******************************************************************************/
 
 #include <stdlib.h>
-#include <stdarg.h>
 #include "mtb_hal_utils.h"
 #include "mtb_hal_utils_impl.h"
 #include "mtb_hal_system_impl.h"
@@ -42,21 +41,28 @@ extern "C"
 int32_t _mtb_hal_utils_calculate_tolerance(mtb_hal_clock_tolerance_unit_t type, uint32_t desired_hz,
                                            uint32_t actual_hz)
 {
+    int32_t tolerance;
     switch (type)
     {
         case MTB_HAL_TOLERANCE_HZ:
-            return (int32_t)(desired_hz - actual_hz);
+            tolerance = (int32_t)(desired_hz - actual_hz);
+            break;
 
         case MTB_HAL_TOLERANCE_PPM:
-            return (int32_t)(((int64_t)(desired_hz - actual_hz)) * 1000000) / ((int32_t)desired_hz);
+            tolerance =
+                (int32_t)(((int64_t)(desired_hz - actual_hz)) * 1000000) / ((int32_t)desired_hz);
+            break;
 
         case MTB_HAL_TOLERANCE_PERCENT:
-            return (int32_t)((((int64_t)desired_hz - actual_hz) * 100) / desired_hz);
+            tolerance = (int32_t)((((int64_t)desired_hz - actual_hz) * 100) / desired_hz);
+            break;
 
         default:
             CY_ASSERT(false);
-            return 0;
+            tolerance = 0;
+            break;
     }
+    return tolerance;
 }
 
 
@@ -72,7 +78,7 @@ cy_rslt_t _mtb_hal_wait_for_status(void* obj, uint32_t status, uint32_t* timeout
     cy_rslt_t result = CY_RSLT_SUCCESS;
     uint32_t timeout_us = _MTB_HAL_UTILS_US_PER_MS;
 
-    if (*timeout > 0)
+    if (*timeout > 0U)
     {
         while ((funcptr(obj, status) == true) && *timeout > 0)
         {

@@ -6,9 +6,9 @@
 * IP versions of the SCB drivers
 *
 ********************************************************************************
-* \copyright
-* Copyright 2024 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation.
+   * \copyright
+* Copyright(c) 2024-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -54,7 +54,7 @@ __STATIC_INLINE uint32_t _mtb_hal_scb_get_transfer_width(CySCB_Type* base)
 {
     uint32_t transfer_width = 0;
 
-    uint8_t mem_width = _FLD2VAL(SCB_CTRL_MEM_WIDTH, SCB_CTRL(base));
+    uint8_t mem_width = (uint8_t)_FLD2VAL(SCB_CTRL_MEM_WIDTH, SCB_CTRL(base));
     if (CY_SCB_MEM_WIDTH_BYTE == mem_width)
     {
         transfer_width = 1;

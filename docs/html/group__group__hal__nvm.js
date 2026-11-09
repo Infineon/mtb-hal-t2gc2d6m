@@ -15,6 +15,8 @@ var group__group__hal__nvm =
       [ "region_count", "group__group__hal__nvm.html#a65c06df727ec049daafae955c195f984", null ],
       [ "regions", "group__group__hal__nvm.html#a17c1a11f78a4da1a14c127f2d3da2698", null ]
     ] ],
+    [ "MTB_HAL_API_AVAILABLE_NVM_IS_BLANK", "group__group__hal__nvm.html#ga040fa6316956a9c2887a3c2054e3c067", null ],
+    [ "MTB_HAL_API_AVAILABLE_NVM_IS_SECTOR_CORRUPT", "group__group__hal__nvm.html#ga7a052b07c9409fbf13f19bd78bedb4ab", null ],
     [ "mtb_hal_nvm_type_t", "group__group__hal__nvm.html#gab994ef1ffec2465000dde7b9a3c7bb22", [
       [ "MTB_HAL_NVM_TYPE_INVALID", "group__group__hal__nvm.html#ggab994ef1ffec2465000dde7b9a3c7bb22ac88b8f9853cf36ff04891b550cdefc3a", null ],
       [ "MTB_HAL_NVM_TYPE_FLASH", "group__group__hal__nvm.html#ggab994ef1ffec2465000dde7b9a3c7bb22a9dd70e0cf0f84cb97f62faf8a2219de6", null ],
@@ -26,5 +28,11 @@ var group__group__hal__nvm =
     [ "mtb_hal_nvm_erase", "group__group__hal__nvm.html#ga13baf4216ead141362b679bd28010410", null ],
     [ "mtb_hal_nvm_write", "group__group__hal__nvm.html#ga53d4f68eb314bbb6994bffa6087b1258", null ],
     [ "mtb_hal_nvm_program", "group__group__hal__nvm.html#ga8cdcebb8414ed7e4ee053951909cc22b", null ],
-    [ "mtb_hal_nvm_get_region_for_address", "group__group__hal__nvm.html#gafb0fe80c7f3b8babd580cf8b238e43c5", null ]
+    [ "mtb_hal_nvm_erase_nb", "group__group__hal__nvm.html#ga98eb415e0130562eb643d25dffbd540d", null ],
+    [ "mtb_hal_nvm_write_nb", "group__group__hal__nvm.html#gaad4231370356352b28b596bfa36463c4", null ],
+    [ "mtb_hal_nvm_program_nb", "group__group__hal__nvm.html#ga0a80eabbf566e2ae86e3be4c75adead3", null ],
+    [ "mtb_hal_nvm_is_operation_complete", "group__group__hal__nvm.html#gaea83e79e150278736c9f7bcb410e5796", null ],
+    [ "mtb_hal_nvm_get_region_for_address", "group__group__hal__nvm.html#gafb0fe80c7f3b8babd580cf8b238e43c5", null ],
+    [ "mtb_hal_nvm_is_blank", "group__group__hal__nvm.html#ga65c72a11d0a57fdb4ddeb9a9cf77f785", null ],
+    [ "mtb_hal_nvm_is_sector_corrupt", "group__group__hal__nvm.html#ga2534e923a2e876c53b42315611941cc1", null ]
 ];

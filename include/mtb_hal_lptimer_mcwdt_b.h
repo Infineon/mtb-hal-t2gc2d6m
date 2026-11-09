@@ -5,9 +5,9 @@
 * Provides common API declarations of the mcwdt_b driver
 *
 ********************************************************************************
-* \copyright
-* Copyright 2025 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation.
+   * \copyright
+* Copyright(c) 2025-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -47,7 +47,8 @@
 extern "C" {
 #endif /* defined(__cplusplus) */
 
-#if (defined (CY_IP_MXS40SRSS) && (CY_IP_MXS40SRSS_VERSION >= 2)) || ((SRSS_NUM_MCWDT_B) > 0)
+#if (defined (CY_IP_MXS40SRSS) && (CY_IP_MXS40SRSS_VERSION >= 2)) || (((SRSS_NUM_MCWDT_B) > 0) && \
+    (SRSS_WDT_B_PRESENT != 0))
 
 /*******************************************************************************
 *                           Defines
@@ -71,6 +72,9 @@ extern "C" {
 
 #define _MTB_HAL_LPTIMER_MIN_DELAY                      (3U) /* minimum amount of lfclk cycles that
                                                                 LPTIMER can delay for. */
+
+#define _mtb_hal_lptimer_get_interrupt_status           Cy_MCWDT_GetInterruptStatus
+
 /*******************************************************************************
 *                           Typedefs
 *******************************************************************************/
@@ -88,8 +92,10 @@ extern "C" {
 //--------------------------------------------------------------------------------------------------
 // _mtb_hal_lptimer_read
 //--------------------------------------------------------------------------------------------------
-/* This IP needs no further action */
-#define _mtb_hal_lptimer_read(obj, count) (count)
+__STATIC_INLINE uint32_t _mtb_hal_lptimer_read(const mtb_hal_lptimer_t* obj)
+{
+    return Cy_MCWDT_GetCount(obj->base, CY_MCWDT_COUNTER2);
+}
 
 
 //--------------------------------------------------------------------------------------------------
@@ -98,7 +104,7 @@ extern "C" {
 __STATIC_INLINE uint32_t _mtb_hal_lptimer_counter_to_mask(cy_en_mcwdtctr_t counter)
 {
     /* Get the mask (for e.g. ClearInterrupt) associated with a particular counter */
-    return 1UL << counter;
+    return 1UL << (uint32_t)counter;
 }
 
 

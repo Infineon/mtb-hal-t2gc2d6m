@@ -3,8 +3,8 @@
 *
 *********************************************************************************
 * \copyright
-* Copyright 2024-2025 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+* Copyright(c) 2024-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -53,7 +53,7 @@ extern "C" {
  */
 typedef struct
 {
-    void* empty;
+    void* empty; /**< Placeholder */
 } mtb_hal_nvm_configurator_t;
 
 /**
@@ -65,7 +65,7 @@ typedef struct
  */
 typedef struct
 {
-    void* empty;
+    void* empty; /**< Placeholder */
 } mtb_hal_nvm_t;
 
 #endif // defined(MTB_HAL_DRIVER_AVAILABLE_NVM)

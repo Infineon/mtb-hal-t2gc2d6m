@@ -6,9 +6,9 @@
 * a wrapper around the lower level PDL API.
 *
 ********************************************************************************
-* \copyright
-* Copyright 2018-2022 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation
+   * \copyright
+* Copyright(c) 2018-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -69,6 +69,18 @@ cy_rslt_t mtb_hal_uart_setup(mtb_hal_uart_t* obj, const mtb_hal_uart_configurato
                              cy_stc_scb_uart_context_t* context, const mtb_hal_clock_t* clock);
 
 //--------------------------------------------------------------------------------------------------
+// _mtb_hal_uart_enable
+//--------------------------------------------------------------------------------------------------
+__STATIC_INLINE cy_rslt_t _mtb_hal_uart_enable(mtb_hal_uart_t* obj, bool enable)
+{
+    enable ? Cy_SCB_UART_Enable(obj->base) : Cy_SCB_UART_Disable(obj->base, obj->context);
+    return CY_RSLT_SUCCESS;
+}
+
+
+#define mtb_hal_uart_enable _mtb_hal_uart_enable
+
+//--------------------------------------------------------------------------------------------------
 // mtb_hal_uart_get_internal
 //--------------------------------------------------------------------------------------------------
 __STATIC_INLINE cy_rslt_t mtb_hal_uart_get_internal(mtb_hal_uart_t* obj, uint8_t* value,
@@ -104,17 +116,34 @@ __STATIC_INLINE cy_rslt_t mtb_hal_uart_get_internal(mtb_hal_uart_t* obj, uint8_t
 //--------------------------------------------------------------------------------------------------
 __STATIC_INLINE cy_rslt_t mtb_hal_uart_put_internal(mtb_hal_uart_t* obj, uint32_t value)
 {
-    uint32_t count = 0;
-    while (count == 0)
-    {
-        count = Cy_SCB_UART_Put(obj->base, value);
-    }
+    uint32_t retry = 200;   /* 2 ms max wait should be enough to send one byte out */
 
-    return CY_RSLT_SUCCESS;
+    do
+    {
+        if (0U != Cy_SCB_UART_Put(obj->base, value))
+        {
+            return CY_RSLT_SUCCESS;
+        }
+        mtb_hal_system_delay_us(10);
+    } while (--retry != 0U);
+
+    return MTB_HAL_UART_RSLT_ERR_BUSY;
 }
 
 
 #define mtb_hal_uart_put(obj, value) mtb_hal_uart_put_internal(obj, value)
+
+//--------------------------------------------------------------------------------------------------
+// _mtb_hal_uart_write_string
+//--------------------------------------------------------------------------------------------------
+__STATIC_INLINE cy_rslt_t _mtb_hal_uart_write_string(mtb_hal_uart_t* obj, const char* tx)
+{
+    Cy_SCB_UART_PutString(obj->base, tx);
+    return CY_RSLT_SUCCESS;
+}
+
+
+#define mtb_hal_uart_write_string _mtb_hal_uart_write_string
 
 #if defined(__cplusplus)
 }

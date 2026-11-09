@@ -5,9 +5,9 @@
 * Provides common API declarations of the mcwdt_b driver
 *
 ********************************************************************************
-* \copyright
-* Copyright 2025 Cypress Semiconductor Corporation (an Infineon company) or
-* an affiliate of Cypress Semiconductor Corporation.
+   * \copyright
+* Copyright(c) 2025-2026 Infineon Technologies AG or an affiliate of
+* Infineon Technologies AG
 *
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -36,7 +36,7 @@ extern "C" {
 #endif /* defined(__cplusplus) */
 
 #if defined(MTB_HAL_DRIVER_AVAILABLE_LPTIMER) && ((defined (CY_IP_MXS40SRSS) && \
-    (CY_IP_MXS40SRSS_VERSION >= 2)) || ((SRSS_NUM_MCWDT_B) > 0))
+    (CY_IP_MXS40SRSS_VERSION >= 2)) || (((SRSS_NUM_MCWDT_B) > 0) && (SRSS_WDT_B_PRESENT != 0)))
 
 /*******************************************************************************
 *                           Defines
@@ -64,7 +64,8 @@ uint32_t _mtb_hal_lptimer_get_toggle_bit(uint32_t c2_current, uint32_t delay)
         bit++;
         val >>= 1;
     }
-    return bit - 1;
+    int toggle_bit = bit - 1;
+    return (uint32_t)toggle_bit;
 }
 
 
@@ -98,7 +99,7 @@ cy_rslt_t mtb_hal_lptimer_process_interrupt(mtb_hal_lptimer_t* obj)
     else
     {
         if ((NULL != obj->callback_data.callback) &&
-            ((obj->isr_instruction & _MTB_HAL_LPTIMER_ISR_CALL_USER_CB_MASK) != 0))
+            ((obj->isr_instruction & (uint8_t)_MTB_HAL_LPTIMER_ISR_CALL_USER_CB_MASK) != 0))
         {
             mtb_hal_lptimer_event_callback_t callback =
                 (mtb_hal_lptimer_event_callback_t)obj->callback_data.callback;
@@ -107,12 +108,12 @@ cy_rslt_t mtb_hal_lptimer_process_interrupt(mtb_hal_lptimer_t* obj)
     }
     #if (_MTB_HAL_IRQ_MUXING)
     /* Check if the event flag should have been cleared when inside a critical situation */
-    if ((obj->isr_instruction & _MTB_HAL_LPTIMER_ISR_CRITICAL_SECTION_MASK) != 0)
+    if ((obj->isr_instruction & (uint8_t)_MTB_HAL_LPTIMER_ISR_CRITICAL_SECTION_MASK) != 0)
     {
         Cy_MCWDT_ClearInterrupt(obj->base, _mtb_hal_lptimer_counter_to_mask(obj->counter));
         Cy_MCWDT_SetInterruptMask(obj->base, Cy_MCWDT_GetInterruptMask(
                                       obj->base) & ~_mtb_hal_lptimer_counter_to_mask(obj->counter));
-        obj->isr_instruction &= ~_MTB_HAL_LPTIMER_ISR_CRITICAL_SECTION_MASK;
+        obj->isr_instruction &= (uint8_t)(~(uint8_t)_MTB_HAL_LPTIMER_ISR_CRITICAL_SECTION_MASK);
     }
     #endif
     return CY_RSLT_SUCCESS;

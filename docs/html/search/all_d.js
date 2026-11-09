@@ -1,9 +1,18 @@
 var searchData=
 [
-  ['pending_0',['pending',['../structmtb__hal__spi__t.html#a4075d330ce38967f25d87d31bf4426ec',1,'mtb_hal_spi_t']]],
-  ['pin_5fnum_1',['pin_num',['../structmtb__hal__gpio__t.html#a194ddb09689a213e120b3ee77a99618d',1,'mtb_hal_gpio_t']]],
-  ['pinnum_2',['pinNum',['../struct__mtb__hal__uart__pin__t.html#ad006e9eb6a49416a8a32c6c1bb732722',1,'_mtb_hal_uart_pin_t']]],
-  ['port_3',['port',['../struct__mtb__hal__uart__pin__t.html#a4c67003e580d7612d8e628d7c9c2a81d',1,'_mtb_hal_uart_pin_t']]],
-  ['port_5faddr_4',['port_addr',['../structmtb__hal__gpio__t.html#a5cf4ed5e2ab8dec1589feb71a88cfd10',1,'mtb_hal_gpio_t']]],
-  ['port_5fnum_5',['port_num',['../structmtb__hal__gpio__t.html#a240b3e0063cffdb174e76f5495f9f62d',1,'mtb_hal_gpio_t']]]
+  ['general_20purpose_20input_20output_0',['GPIO (General Purpose Input Output)',['../group__group__hal__gpio.html',1,'']]],
+  ['general_20types_1',['General Types',['../group__group__hal__general__types.html',1,'']]],
+  ['general_20types_20macros_2',['HAL General Types/Macros',['../group__group__hal__types.html',1,'']]],
+  ['generated_20features_20limitations_3',['generated features limitations',['../group__group__hal__impl__memoryspi.html#section_hal_impl_memoryspi_init_cfg',1,'Configurator-generated features limitations'],['../group__group__hal__impl__spi.html#section_hal_impl_spi_init_cfg',1,'Configurator-generated features limitations']]],
+  ['generation_20example_4',['Simple TRNG number generation example',['../group__group__hal__trng.html#subsection_trng_use_case_1',1,'']]],
+  ['generator_5',['Generator',['../group__group__hal__trng.html',1,'TRNG (True Random Number Generator)'],['../group__group__hal__impl__trng.html',1,'TRNG (True Random Number Generator)']]],
+  ['get_20nvm_20characteristics_6',['Snippet 1: Get NVM Characteristics',['../group__group__hal__nvm.html#subsection_nvm_use_case_1',1,'']]],
+  ['get_5ffrequency_5fhz_7',['get_frequency_hz',['../structmtb__hal__clock__interface__t.html#aff69b498d544dec4d53cd786c88a27e4',1,'mtb_hal_clock_interface_t']]],
+  ['gpio_8',['GPIO',['../group__group__hal__gpio.html#subsection_gpio_snippet_1',1,'Snippet 1: Reading value from GPIO'],['../group__group__hal__gpio.html#subsection_gpio_snippet_2',1,'Snippet 2: Writing value to a GPIO'],['../group__group__hal__gpio.html#subsection_gpio_snippet_3',1,'Snippet 3: Reconfiguring a GPIO']]],
+  ['gpio_20events_9',['Snippet 4: Interrupts on GPIO events',['../group__group__hal__gpio.html#subsection_gpio_snippet_4',1,'']]],
+  ['gpio_20general_20purpose_20input_20output_10',['GPIO (General Purpose Input Output)',['../group__group__hal__gpio.html',1,'']]],
+  ['gpio_20hal_20results_11',['GPIO HAL Results',['../group__group__hal__results__gpio.html',1,'']]],
+  ['gpio_20mode_12',['SPI controller SS pin configured in GPIO mode',['../group__group__hal__impl__spi.html#section_hal_impl_spi_controller_ss',1,'']]],
+  ['group_13',['group',['../structmtb__hal__pwm__configurator__t.html#a248b2769d9e7de530ab6085fd1f4d2b7',1,'mtb_hal_pwm_configurator_t::group'],['../structmtb__hal__tcpwm__t.html#affa370e3276819f28d14bfd33b66684e',1,'mtb_hal_tcpwm_t::group']]],
+  ['grp_5fcnt_5fbase_14',['grp_cnt_base',['../structmtb__hal__tcpwm__t.html#a8d7efc4204b2c654c01a58040345fbea',1,'mtb_hal_tcpwm_t']]]
 ];
